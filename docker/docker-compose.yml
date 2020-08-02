@@ -1,0 +1,54 @@
+version: '3.3'
+
+services:
+  post_db:
+    image: mongo:${MONGO_VERSION:-latest}
+    volumes:
+      - post_db:/data/db
+    networks:
+      back_net:
+        aliases:
+          - post_db
+          - comment_db
+
+  ui:
+    image: ${USER_NAME}/ui:${UI_VERSION:-latest}
+    ports:
+      - ${UI_PORT}:${REDDIT_PORT}/tcp
+    networks:
+      - front_net
+
+  post:
+    image: ${USER_NAME}/post:${POST_VERSION:-latest}
+    networks:
+      - back_net
+      - front_net
+
+  comment:
+    image: ${USER_NAME}/comment:${COMMENT_VERSION:-latest}
+    networks:
+      - back_net
+      - front_net
+
+  prometheus:
+    image: ${USER_NAME}/prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention=1d'
+    networks:
+      - back_net
+      - front_net
+
+volumes:
+  post_db:
+  prometheus_data:
+
+networks:
+  back_net:
+    internal: true
+  front_net:
