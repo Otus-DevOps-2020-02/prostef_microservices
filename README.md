@@ -53,3 +53,6 @@ prostef microservices repository
 - Протестирована обратная связь Prometheus если останавливать/запускать отдельные сервисы
 - Добавлен новый сервис node-exporter и протестирована его работа
 - Все образы запушины в DockerHub https://hub.docker.com/u/prostef
+
+## Monitoring-2
+-
