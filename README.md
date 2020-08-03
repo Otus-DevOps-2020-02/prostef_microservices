@@ -25,3 +25,19 @@ prostef microservices repository
 - Создан и параметаризирован docker-compose.yml
 - Значения параметров заданы в файле .env в этой же директории
 - Базовое имя проекта тоже можно переопределить при помщи переменной COMPOSE_PROJECT_NAME в файле .env
+
+## GitLab CI
+- При помощи gcloud создан инстанс: gcloud compute instances create "gitlab-ci" \
+        --image-family="ubuntu-1604-lts" \
+        --image-project=ubuntu-os-cloud \
+        --machine-type="n1-standard-1" \
+        --boot-disk-size="100" \
+        --zone="europe-west1-b" \
+        --tags="default-allow-http,default-allow-ssh,http-server,https-server"
+- Установлен Docker на инстнс
+- Подготовлено окружение и при помощи Docker-compose поднят GitLab на инстансе
+- Произведена регистрация аккаунта в GitLab
+- Локальная ветка gitlab-ci-1 связана с удаленным репозиторием на инстансе и запушена туда
+- В GitLab добавлен Runner для запуска пайплайнов
+- В пайплайн добавлено тестирование и разделение по окружениям
+- Проверена работа пайплайна
