@@ -55,4 +55,10 @@ prostef microservices repository
 - Все образы запушины в DockerHub https://hub.docker.com/u/prostef
 
 ## Monitoring-2
--
+- Добавлен cAdvisor и выделен в отдельную сборку сервисов наблюдения вместе с Prometheus
+- Создано правило файервола cadvior-default открывающее порт 8080 для сервиса cAdvisor
+- Протестирована работа cAdvisor
+- Добавлена Grafana и выделена в отдельную сборку сервисов наблюдения вместе с Prometheus
+- Создано правило файервола grafana-default открывающее порт 3000 для сервиса Grafana
+- Протестирована работа в Grafana
+- Созданы дашборды в Grafana и экспортированы в виде json файлов в проект
