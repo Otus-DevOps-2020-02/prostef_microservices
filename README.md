@@ -74,3 +74,6 @@ prostef microservices repository
 - Протестирован парсинг неструктурированных логов
 - Добавлен и опубликован сервис Zipkin
 - Протестирована работа в Zipkin
+
+## Kubernetes-1
+-
