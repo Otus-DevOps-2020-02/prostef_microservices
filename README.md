@@ -102,3 +102,8 @@ prostef microservices repository
 - Выполнен смок тест чтобы убедиться что кластер Kubernetes работает нормально
 - Проверено, что kubectl apply -f [ui-deployment.yml / post-deployment.yml / mongo-deployment.yml / comment-deployment.yml] проходит и поды запускаются
 - Произведена очистка всех созданых сущностей в GCP
+
+## Kubernetes-2
+- Установлен и запущен minikube с --vm-driver=virtualbox
+- Созданые отдельные деплойменты и сервисы для разных частей приложения
+-
