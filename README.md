@@ -131,3 +131,9 @@ prostef microservices repository
 - Создан запрос на выделения ресурсов PersistentVolumeClaim для StorageClass
 - Для mongo service применено использование StorageClass
 - Протестировано, что все работает
+
+## Kubernetes-4
+- Установлен Helm
+- Создан и исполнен манифест для tiller
+- Создан Chart для Heml со структурой приложения
+-
