@@ -114,9 +114,20 @@ prostef microservices repository
 - Протестирована доступность и работоспособность приложения (сделан скриншот приложения)
 
 ## Kubernetes-3
-- У ui service задаy тип LoadBalancer
+- У ui service задан тип LoadBalancer
 - После небольшого ожидания проверена доступность приложения по адресу, на который распределил балансировщик
 - Создан Ingress контроллер для сервиса ui
 - Проверена работа приложения с использованием Ingress балансировки
 - Убран LoadBalancer так как уже используется Ingress
 - Сгенерирован сертификат и загружен в кластер kubernetes
+- Поставлен доступ на ui только по https
+- Для кластера включена Network Policy
+- Создана mongo-network-policy
+- Создан диск в Google Cloud и он же указан как volume у mongo service
+- Протестировано, что удалении и установке mongo сервиса данные никуда не теряются
+- Создан PersistentVolume для mongo и он же добавлен в кластер
+- Создан запрос на выделения ресурсов PersistentVolumeClaim для PersistentVolume
+- Создан StorageClass для динамического выделения volume'ов
+- Создан запрос на выделения ресурсов PersistentVolumeClaim для StorageClass
+- Для mongo service применено использование StorageClass
+- Протестировано, что все работает
