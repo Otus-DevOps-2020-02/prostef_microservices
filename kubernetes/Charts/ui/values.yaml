@@ -5,3 +5,11 @@ service:
 image:
   repository: prostef/ui
   tag: latest
+
+ingress:
+  class: nginx
+
+postHost:
+postPort:
+commentHost:
+commentPort:
