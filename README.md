@@ -156,3 +156,8 @@ prostef microservices repository
 - Добавлены пайплайны gitlab-ci для каждого из сервисов
 - Протестировано, что сборки сервисов по пайплайнам проходят успешно
 - Подготовлен gitlab-ci для reddit-deploy
+
+## Kubernetes-5
+- Установлен ingress-контроллер nginx
+- Изменен hosts файл
+-
