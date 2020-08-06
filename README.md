@@ -160,4 +160,9 @@ prostef microservices repository
 ## Kubernetes-5
 - Установлен ingress-контроллер nginx
 - Изменен hosts файл
+- Загружен prometheus локально в Charts каталог
+- Запущен prometheus с кастомными переменными custom_values.yml
+- Включен сервис kube-state-metrics
+- Включен сервис node-exporter
+- Запущено приложение reddit разных енвайроментов и на разных неймспейсах
 -
