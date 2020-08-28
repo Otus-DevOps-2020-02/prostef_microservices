@@ -1,0 +1,7 @@
+name: ui
+version: 1.0.0
+description: OTUS reddit application UI
+maintainers:
+  - name: prostef
+email: mokeev.ig@me.com
+appVersion: 1.0
